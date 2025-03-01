@@ -47,4 +47,4 @@ while running:
 pygame.quit()
 sys.exit()
 
-#Kaita is gay 22222s
+#Kaita is gay
