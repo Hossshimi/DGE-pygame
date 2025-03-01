@@ -4,15 +4,29 @@ import sys
 # Initialize Pygame
 pygame.init()
 
-# Set up the display
-width, height = 800, 600
+# Set up the display and window's title
+width, height = 1920, 1080
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('Balance Scale')
 
+# Set up the logo
+icon = pygame.image.load('balancescale/assets/logo.png')
+pygame.display.set_icon(icon)
+
+# Set up the background
+background = pygame.image.load('balancescale/assets/testbackground.jpg')
+background = pygame.transform.scale(background, (width, height))
+screen.blit(background, (0, 0))
+pygame.display.update()
+
 # Set up font and text
-font = pygame.font.Font(None, 74)
+font = pygame.font.Font("balancescale/assets/fonts/Montserrat-VariableFont_wght.ttf", 60)
 text = font.render("Kaita isn't gay", True, (0, 0, 0))
 text_rect = text.get_rect(center=(width // 2, height // 2))
+
+#Load Background Music
+pygame.mixer.music.load('balancescale/assets/music/06052021_1_loading_screen_fresh_air_saturation.mp3')
+pygame.mixer.music.play(-1)
 
 # Main game loop
 running = True
@@ -21,8 +35,8 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    # Fill the screen with a color (RGB)
-    screen.fill((255, 255, 255))
+    # Draw the background
+    screen.blit(background, (0, 0))
 
     # Draw the text on the screen
     screen.blit(text, text_rect)
@@ -30,21 +44,6 @@ while running:
     # Update the display
     pygame.display.flip()
 
-# Main game loop
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    # Fill the screen with a color (RGB)
-    screen.fill((255, 255, 255))
-
-    # Update the display
-    pygame.display.flip()
-
 # Quit Pygame
 pygame.quit()
 sys.exit()
-
-#Kaita is gay
