@@ -21,7 +21,7 @@ pygame.display.update()
 
 # Set up font and text
 font = pygame.font.Font("balancescale/assets/fonts/Montserrat-VariableFont_wght.ttf", 60)
-text = font.render("Kaita isn't gay", True, (0, 0, 0))
+text = font.render("Kaita is gay", True, (0, 0, 0))
 text_rect = text.get_rect(center=(width // 2, height // 2))
 
 #Load Background Music
