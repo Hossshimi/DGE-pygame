@@ -13,8 +13,8 @@ from objects import title, draw
 #pygame.mixer.music.play(-1)
 
 # Main game loop
-running = True
-while running:
+#running = True
+while True:
     # Draw the background
     display.screen.blit(display.background, (0, 0))
 
@@ -29,7 +29,7 @@ while running:
     
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
+            break
             
 # Quit pygame and exit program after the main loop ends
 pygame.quit()
